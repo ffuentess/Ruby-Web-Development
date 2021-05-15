@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Formulario de Registro</title>
+</head>
+
+<body>
+    <form>
+        <h1>Regístrese a Continuación</h1>
+        <label for="nombre" id="nombre">
+            Nombre: <input type="text" name="nombre">
+        </label>
+        <br>
+        <br>
+        <label for="apellidos" id="apellidos">
+            Apellidos: <input type="text" name="apellidos">
+        </label>
+        <br>
+        <br>
+        <label for="Email" id="Email">
+            Email: <input type="text" name="Email">
+        </label>
+        <br>
+        <br>
+        <label for="Contraseña" id="Contraseña">
+            Contraseña: <input type="password" name="password">
+        </label>
+        <br>
+        <br>
+        <label for="Confirmar" id="Confirmar">
+            Confirmar: <input type="password" name="password">
+        </label>
+        <br>
+        <br>
+        <label for="Cumpleaños" id="Cumpleaños">
+            Cumpleaños: <input type="date" name="cumpleaños">
+        </label>
+        <br>
+        <h5>Selecione su Género</h5>
+        <label for="Masculino" id="Masculino">
+            Masculino <input type="radio" name="genero" value="Masculino">
+        </label>
+        <label for="Femenino" id="Femenino">
+            Femenino <input type="radio" name="genero" value="Femenino">
+        </label>
+        <label for="NC" id="NC">
+            Prefiero no contestar <input type="radio" name="genero" value="NC">
+        </label>
+        <br>
+        <h5>Ingresa una breve descripción de ti</h5>
+        <textarea name="descricpción" id="descricpción" cols="30" rows="10"></textarea>
+        <br>
+        <label for="Lenguaje" id="Lenguaje">
+            Lenguaje favorito <select name="lenguaje">
+                <option value="Python">Python</option>
+                <option value="Ruby">Ruby</option>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+            </select>
+        </label>
+        <br>
+        <br>
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+
+</html>
