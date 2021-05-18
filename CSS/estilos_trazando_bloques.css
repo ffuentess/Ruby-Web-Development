@@ -1,33 +1,39 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
 #Fondo {
-    width: 100%;
-    height: 620px;
+    width: 950px;
+    height: 650px;
     background-color: grey;
-    padding: 5%;
-    display: inline-block;
+    margin: 0px auto;
+    padding: 1%;
 }
 
 #Header {
     width: 100%;
-    height: 150px;
+    height: 15%;
     background-color: green;
 }
 
 #Barra-izquierda {
-    width: 200px;
-    height: 400px;
+    width: 20%;
+    height: 60%;
     background-color: blue;
-    margin-top: 5%;
+    margin-top: 1%;
     display: inline-block;
 }
 
 #Contenido-principal {
-    width: 70%;
-    height: 65%;
+    width: 74%;
+    height: 60%;
     background-color: red;
-    margin-top: 5%;
-    margin-left: 5%;
+    margin-top: 1%;
+    margin-left: 1%;
     display: inline-block;
     padding: 2%;
+    vertical-align: top;
 }
 
 .articulo {
