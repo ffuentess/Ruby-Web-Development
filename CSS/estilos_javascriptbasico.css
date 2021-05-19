@@ -1,0 +1,75 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+#Contenedor {
+    width: 1170px;
+    height: 800px;
+    padding: 1%;
+    margin: 2%;
+    background-color: royalblue;
+}
+
+h1,
+h2,
+p {
+    color: white;
+    padding-top: 1%;
+    padding-left: 1%;
+}
+
+bold {
+    color: slateblue;
+}
+
+#Header {
+    width: 100%;
+    height: 7%;
+    background-color: red;
+    border-radius: 15px;
+}
+
+#Barra-izquierda {
+    width: 18%;
+    height: 27%;
+    background-color: skyblue;
+    margin-top: 2%;
+    margin-right: 2%;
+    border-radius: 15px;
+    display: inline-block;
+    padding: 1%;
+}
+
+#Contenido-principal {
+    width: 77%;
+    height: 77%;
+    background-color: black;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 2%;
+    border-radius: 15px;
+}
+
+#Footer {
+    width: 100%;
+    height: 7%;
+    background-color: gray;
+    border-radius: 15px;
+    margin-top: 2%;
+}
+
+#menu {
+    margin-left: 10%;
+    color: white;
+}
+
+#Submenu {
+    margin-left: 20%;
+    color: white;
+}
+
+#ulcontenido {
+    color: white;
+    margin-left: 3%;
+}
