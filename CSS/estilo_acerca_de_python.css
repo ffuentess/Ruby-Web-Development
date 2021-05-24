@@ -71,6 +71,7 @@
     border-top: solid #73A7D5;
     margin: 2% 2%;
     text-align: center;
+    vertical-align: top;
 }
 
 #cajaparrafo {
@@ -172,6 +173,10 @@ b {
 .linkmedio {
     color: #73A7D5;
     font-size: 12px;
+}
+
+.linkmediosinpto {
+    list-style-type: none;
 }
 
 h4 {

@@ -1,6 +1,7 @@
 * {
     padding: 0px;
     margin: 0px;
+    outline: red 1px dotted;
 }
 
 #Contenedor {
@@ -77,5 +78,5 @@ b {
 }
 
 #punto {
-    marker: none;
+    list-style-type: none;
 }
