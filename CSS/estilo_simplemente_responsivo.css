@@ -1,0 +1,58 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    outline: dotted red 1px;
+}
+
+@media only screen and (max-width: 480px) {
+    #Desktop,
+    #Tablet {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 1023px) {
+    #Desktop,
+    #Phone {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    #Tablet,
+    #Phone {
+        display: none;
+    }
+}
+
+#Contenedor {
+    margin: 2% auto;
+    padding: 1%;
+}
+
+h1 {
+    width: 96%;
+    height: 10%;
+    background-color: silver;
+    padding: 2%;
+}
+
+p {
+    width: 96%;
+    height: 10%;
+    background-color: rgb(225, 222, 222);
+    padding: 2%;
+    margin-top: 1%;
+}
+
+h4 {
+    width: 98%;
+    height: 5%;
+    background-color: rgb(255, 211, 157);
+    padding: 1% 0% 0% 2%;
+    margin-top: 1%;
+}
+
+b {
+    font-weight: bold;
+}
