@@ -1,0 +1,144 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    outline: dotted red 1px;
+}
+
+
+/*Contenedores*/
+
+#contenedor {
+    width: 1190px;
+    height: 650px;
+    margin: 20px auto;
+    background-color: #EEEEEE;
+    padding: 1%;
+}
+
+#tablasuperior {
+    width: 95%;
+    height: 65%;
+    display: inline-block;
+}
+
+#etizquierda {
+    width: 3%;
+    height: 65%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.izquierda {
+    margin: 80% 20% 50% 20%;
+}
+
+#azules {
+    width: 11%;
+    height: 95%;
+    display: inline-block;
+    margin-top: 2%;
+}
+
+.azul {
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background-color: #689BFF;
+    margin: 1%;
+    display: inline-block;
+}
+
+#rosas {
+    width: 52%;
+    height: 54%;
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 0.5%;
+}
+
+.rosa {
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background-color: #FD9A98;
+    margin-bottom: 0.5%;
+    display: inline-block;
+}
+
+#amarillos {
+    width: 33%;
+    height: 95%;
+    display: inline-block;
+    margin-top: 2%;
+    margin-left: 1%;
+    vertical-align: bottom;
+    text-align: right;
+}
+
+.amarillo {
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background-color: #FECB00;
+    margin-bottom: 0.5%;
+    display: inline-block;
+    margin-left: 1%;
+}
+
+#verdes {
+    width: 72%;
+    height: 25%;
+    display: inline-block;
+    margin-top: 2%;
+    vertical-align: middle;
+}
+
+.verde {
+    width: 55px;
+    height: 55px;
+    text-align: center;
+    background-color: #1FCA21;
+    margin: 0% 0.2% 2% 0%;
+    margin-bottom: 4.5%;
+    display: inline-block;
+    margin-left: 0%;
+}
+
+#otros {
+    width: 14%;
+    height: 25%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 2%;
+}
+
+
+/*Textos*/
+
+.etiqueta {
+    color: red;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.numeros {
+    margin: 0% 2% 0% 2%;
+}
+
+span {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #1913A2;
+    font-weight: bolder;
+    margin: 1% 0%;
+}
+
+p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+}
+
+.titinferior {
+    margin: 20%;
+}
