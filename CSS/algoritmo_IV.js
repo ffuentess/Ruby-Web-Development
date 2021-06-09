@@ -19,22 +19,18 @@ function maxminPromedio(x) {
     var max = x[0];
     var min = x[0];
     var ave = 0;
-    for (var i = 1; i < x.length; i++) {
+    for (var i = 0; i < x.length; i++) {
+        ave += x[i];
+
         if (max < x[i]) {
             max = x[i];
-        }
+        } else if (min > x[i]) {
+            min = x[i];
+        };
     }
-    console.log("El valor máximo es: ", max);
-    for (var j = 1; j < x.length; j++) {
-        if (min > x[j]) {
-            min = x[j];
-        }
-    }
-    console.log("El valor mínimo es: ", min);
-    for (var k = 0; k < x.length; k++) {
-        ave += x[k];
-    }
-    console.log("El promedio es: ", ave / x.length);
+    console.log("El valor máximo es: " + max);
+    console.log("El valor mínimo es: " + min);
+    console.log("El promedio es: " + (ave / x.length));
 }
 
 maxminPromedio(arr)
