@@ -1,77 +1,33 @@
-
 <html lang="en">
+
 <head>
     <title>NinjaMan</title>
     <style type="text/CSS">
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        .row {
-            line-height: 0;
-        }
-        .wall {
-            background-color: green;
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-        }
-        .sushi {
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-            background-image: url('sushi.png');
-            background-size: contain;
-        }
-        .onigiri {
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-            background-image: url('onigiri.png');
-            background-size: contain;
-        }
-        .blank {
-            background-color: white;
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-        }
-        #ninjaman {
-            background-color: white;
-            height: 40px;
-            width: 40px;
-            display: inline-block;
-            background-image: url('ninja.gif');
-            background-size: contain;
-            position: absolute;
-        }
-        .score {
-            color: white;
-            height: 30px;
-            width: 120px;
-            background-color: green;
-        }
+        * { margin: 0; padding: 0; } .row { line-height: 0; } .wall { background-color: green; height: 40px; width: 40px; display: inline-block; } .sushi { height: 40px; width: 40px; display: inline-block; background-image: url('sushi.png'); background-size:
+        contain; } .onigiri { height: 40px; width: 40px; display: inline-block; background-image: url('onigiri.png'); background-size: contain; } .blank { background-color: white; height: 40px; width: 40px; display: inline-block; } #ninjaman { background-color:
+        white; height: 40px; width: 40px; display: inline-block; background-image: url('ninja.gif'); background-size: contain; position: absolute; } .score { color: white; height: 30px; width: 120px; background-color: green; }
     </style>
 </head>
+
 <body>
-    <div id ='ninjaman'></div>
-    <div id ='world'></div>
-    <div class ='score'>Tu puntaje: <span id ='mostrar_puntaje'></span></div>
+    <div id='ninjaman'></div>
+    <div id='world'></div>
+    <div class='score'>Tu puntaje: <span id='mostrar_puntaje'></span></div>
+    <button onclick=crearMundo()>Generar mundo aleatorio</button>
 </body>
-<script type = "text/javascript">
-    
+<script type="text/javascript">
     /* Dibujo del mundo del juego */
     var world = [
-        [1,1,1,1,1,1,1,1,1,1],
-        [1,0,0,2,0,1,0,0,2,1],
-        [1,0,1,1,0,3,2,1,0,1],
-        [1,2,0,2,1,2,1,1,0,1],
-        [1,0,1,0,1,0,1,0,0,1],
-        [1,0,1,3,0,3,0,2,1,1],
-        [1,3,0,2,1,0,1,0,0,1],
-        [1,0,1,0,1,0,1,1,0,1],
-        [1,2,0,2,1,2,0,0,2,1],
-        [1,1,1,1,1,1,1,1,1,1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+        [1, 0, 0, 2, 0, 1, 0, 0, 2, 1],
+        [1, 0, 1, 1, 0, 3, 2, 1, 0, 1],
+        [1, 2, 0, 2, 1, 2, 1, 1, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 0, 0, 1],
+        [1, 0, 1, 3, 0, 3, 0, 2, 1, 1],
+        [1, 3, 0, 2, 1, 0, 1, 0, 0, 1],
+        [1, 0, 1, 0, 1, 0, 1, 1, 0, 1],
+        [1, 2, 0, 2, 1, 2, 0, 0, 2, 1],
+        [1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
     ]
     var worldDict = {
         0: 'blank',
@@ -80,12 +36,24 @@
         3: 'onigiri'
     }
 
-    function dibujoMundo(){output = '';
+    /*Fuincion para crear mundo aleatorio*/
+    function crearMundo() {
+        for (var i = 1; i <= world.length - 2; i++) {
+            for (var j = 1; j <= world.length - 2; j++) {
+                world[i][j] = Math.floor(Math.random() * 4);
+            }
+        }
+        dibujoMundo();
 
-        for(var row = 0; row < world.length; row++){
+    }
+
+    function dibujoMundo() {
+        output = '';
+
+        for (var row = 0; row < world.length; row++) {
             output += "<div class = 'row'>"
-            for(var x = 0; x < world[row].length; x++){
-                output += "<div class = '"+ worldDict[world[row][x]] +"'></div>"
+            for (var x = 0; x < world[row].length; x++) {
+                output += "<div class = '" + worldDict[world[row][x]] + "'></div>"
             }
             output += "</div>"
         }
@@ -100,52 +68,53 @@
         y: 1
     }
 
-    function posNinjaman(){
+    function posNinjaman() {
         document.getElementById('ninjaman').style.top = ninjaman.y * 40 + 'px'
         document.getElementById('ninjaman').style.left = ninjaman.x * 40 + 'px'
     }
     posNinjaman()
-    
+
 
     var puntaje = 0;
-    function printScore(num){
+
+    function printScore(num) {
         puntaje += num;
         console.log("Tu puntaje: " + puntaje + " pts.");
         document.getElementById('mostrar_puntaje').innerHTML = puntaje;
     }
 
-    
-    document.onkeydown = function(e){
-        if(e.keyCode == 37){
-            if(world[ninjaman.y][ninjaman.x - 1] != 1){
-                ninjaman.x --;
+
+    document.onkeydown = function(e) {
+        if (e.keyCode == 37) {
+            if (world[ninjaman.y][ninjaman.x - 1] != 1) {
+                ninjaman.x--;
             }
         }
-        if(e.keyCode == 38){
-            if(world[ninjaman.y - 1][ninjaman.x] != 1){
+        if (e.keyCode == 38) {
+            if (world[ninjaman.y - 1][ninjaman.x] != 1) {
                 ninjaman.y--;
             }
         }
-        if(e.keyCode == 39){
-            if(world[ninjaman.y][ninjaman.x + 1] != 1){
+        if (e.keyCode == 39) {
+            if (world[ninjaman.y][ninjaman.x + 1] != 1) {
                 ninjaman.x++;
             }
         }
-        if(e.keyCode == 40){
-            if(world[ninjaman.y + 1][ninjaman.x] != 1){
+        if (e.keyCode == 40) {
+            if (world[ninjaman.y + 1][ninjaman.x] != 1) {
                 ninjaman.y++;
             }
         }
-        
-        if(world[ninjaman.y][ninjaman.x] == 2){
+
+        if (world[ninjaman.y][ninjaman.x] == 2) {
             world[ninjaman.y][ninjaman.x] = 0;
             printScore(10);
         }
-        if(world[ninjaman.y][ninjaman.x] == 3){
+        if (world[ninjaman.y][ninjaman.x] == 3) {
             world[ninjaman.y][ninjaman.x] = 0;
             printScore(5);
         }
-    
+
         posNinjaman()
         dibujoMundo()
     }
@@ -157,9 +126,10 @@
     x onigiri = 5 pts.
 
     -- Desafío avanzado:
-        - Crear un mundo random
+        x Crear un mundo random
     --Hacker Challenge:
         - Crear fantasmas que persigan a ninjaman
     */
 </script>
+
 </html>
