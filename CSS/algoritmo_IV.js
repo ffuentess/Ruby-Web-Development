@@ -51,8 +51,8 @@ replaceNegatives([1, 2, 4, -2, 7, -8, -9])
 /* 4) Dado un array y su respectivo índice, remueve los valores en el rango del índice dado( acortando el array). Por ejemplo, removerRango([20,30,40,50,60,70],2,4)debiera devolver [20,30,70]. */
 
 function removeRange(x, y, z) {
-    var num = (z - y) + 1;
-    x.splice(y, num);
+    var range = (z - y) + 1;
+    x.splice(y, range);
     console.log(x);
 }
 
