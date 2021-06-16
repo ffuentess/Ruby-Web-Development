@@ -117,7 +117,9 @@ function masImpar(array) {
 
 masImpar([1, 2, 3, 4, 5, 6])
 
-/*8) Pasado un array (similar a decir ‘tomado un array’ o ‘dado un array’) que contiene strings, reemplaza cada string con un número de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver [“programar”,9, 4]. Pista: ¿For loops solo puede ir hacia adelante? */
+/*8) Pasado un array (similar a decir ‘tomado un array’ o ‘dado un array’) que contiene strings, reemplaza cada string con un número 
+de acuerdo cantidad de letras (longitud) del string anterior. Por ejemplo, longitudesPrevias([“programar”,“dojo”, “genial”]) debería devolver 
+[“programar”,9, 4]. Pista: ¿For loops solo puede ir hacia adelante? */
 
 function longitudPrevia(x) {
     var lon = 0;
@@ -130,7 +132,8 @@ function longitudPrevia(x) {
 
 longitudPrevia(["programar", "dojo", "genial"])
 
-/*9) Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno. No alteres el array original. Por ejemplo, agregaSiete([1,2,3) debería devolver [8,9,10] en un nuevo array.  */
+/*9) Construye una función que acepte un array. Devuelve un nuevo array con todos los valores del original, pero sumando 7 a cada uno.
+No alteres el array original. Por ejemplo, agregaSiete([1,2,3) debería devolver [8,9,10] en un nuevo array.  */
 
 function masSiete(array) {
     var arr = array;
@@ -142,7 +145,9 @@ function masSiete(array) {
 
 masSiete([1, 2, 3])
 
-/*10) Dado un array, escribe una función que invierte sus valores en el lugar. Ejemplo: invertir([3,1,6,4,2)) devuelve el mismo array pero con sus valores al revés, es decir [2,4,6,1,3]. Haz esto sin crear un array temporal vacío. (Pista: necesitarás intercambiar (swap) valores). */
+/*10) Dado un array, escribe una función que invierte sus valores en el lugar. 
+Ejemplo: invertir([3,1,6,4,2)) devuelve el mismo array pero con sus valores al revés, es decir [2,4,6,1,3].
+Haz esto sin crear un array temporal vacío. (Pista: necesitarás intercambiar (swap) valores). */
 
 function arrayInverso(array) {
     var aux = 0;
@@ -156,7 +161,8 @@ function arrayInverso(array) {
 
 arrayInverso([3, 1, 6, 4, 2, 8]);
 
-/*11) Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5]. */
+/*11) Dado un array crear y devuelve uno nuevo que contenga todos los valores del array original, 
+pero negativos (no simplemente multiplicando por -1). Dado [1,-3,5], devuelve [-1,-3,-5]. */
 
 function arrayNegativo(array) {
     var arr = array;
@@ -170,25 +176,28 @@ function arrayNegativo(array) {
 
 arrayNegativo([1, -3, 5])
 
-/*12) Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. */
+/*12) Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores sea “comida”. 
+Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. */
 
 function tengoHambre(array) {
     var count = 0;
     for (var i = 0; i < array.length; i++) {
-        if (array[i] === "comida") {
+        if (array[i] == "comida") {
             console.log("yummy");
             count += 1;
         }
     }
-    if (count === 0) {
+    if (count == 0) {
         console.log("tengo hambre");
     }
 }
 
 tengoHambre(["comida", "chocolate", "cafe", "comida", "manzana"]);
 
-/*13) Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, 2, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez. */
-
+/*13) Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc. Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) 
+cambia el array a [“pizza¨, 42, “Ada”, 2, true]. cambiaHaciaElCentro([1,2,3,4,5,6]) cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) 
+el array esta vez. */
+// esta opcion solo funbciona para una array con cierta cantidad de elementos, si la array tiene muchos elementos, no intercambia todos los valores.
 function haciaElCentro(array) {
     var prim = [];
     var terc = [];
@@ -203,6 +212,16 @@ function haciaElCentro(array) {
 }
 
 haciaElCentro([1, 2, 3, 4, 5, 6]);
+//esta opcion son menos lineas, con i < array.length / 2 llegamos hasta la mitad del array y con el contador i += 2 se salta una posicion en el array para llegar al siguiente como decia el enunciado
+function haciaElCentro2(array) {
+    for (var i = 0; i < array.length / 2; i += 2) {
+        var temp = array[i];
+        array[i] = array[array.length - 1 - i];
+        array[array.length - 1 - i] = temp;
+    }
+    return array;
+}
+console.log(haciaElCentro2([1, 2, 3, 4, 5, 6]));
 
 /*14) Dado un array arr y un número num, multiplica todos los valores en el array arr por el número num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9]. */
 

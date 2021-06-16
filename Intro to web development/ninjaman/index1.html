@@ -13,7 +13,7 @@
     <div id='ninjaman'></div>
     <div id='world'></div>
     <div class='score'>Tu puntaje: <span id='mostrar_puntaje'></span></div>
-    <button onclick=crearMundo()>Generar mundo aleatorio</button>
+    <button onclick=crearMundo();>Generar mundo aleatorio</button>
 </body>
 <script type="text/javascript">
     /* Dibujo del mundo del juego */
@@ -44,9 +44,10 @@
             }
         }
         dibujoMundo();
-
+        resetScore();
     }
 
+    /*Dibujar mundo*/
     function dibujoMundo() {
         output = '';
 
@@ -79,7 +80,11 @@
 
     function printScore(num) {
         puntaje += num;
-        console.log("Tu puntaje: " + puntaje + " pts.");
+        document.getElementById('mostrar_puntaje').innerHTML = puntaje;
+    }
+
+    function resetScore() {
+        puntaje = 0;
         document.getElementById('mostrar_puntaje').innerHTML = puntaje;
     }
 
