@@ -26,7 +26,8 @@
                     }
                 }
             });*/
-
+            /*
+            Opcion con mas lineas de código que cada vez que se hace click recorre las 4 imagenes sobreescribiendolas
             $('img').click(function() {
                 for (let i = 0; i <= 4; i++) {
                     if ($(this).attr('src') == "imagenes/ninjacat/ninja" + i + ".png") {
@@ -36,17 +37,28 @@
                     }
                 }
             });
-
-
+            */
+            //menos lineas de codigo al hacer click sobreescribe inmediatamente la imagen
+            $('img').click(function() {
+                var temporal = $(this).attr('src');
+                $(this).attr('src', $(this).attr('data-alt-src'));
+                $(this).attr('data-alt-src', temporal);
+            });
 
 
             //fin jquery
         });
     </script>
+    <style>
+        #container {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <div id="container">
+        <h1>De Ninja a Gato y viceversa</h1>
         <img src="imagenes/ninjacat/ninja0.png" data-alt-src="imagenes/ninjacat/cat0.png" temp="imagenes/ninjacat/ninja0.png" alt="ninja0">
         <br>
         <img src="imagenes/ninjacat/ninja1.png" data-alt-src="imagenes/ninjacat/cat1.png" temp="imagenes/ninjacat/ninja1.png" alt="ninja1">
