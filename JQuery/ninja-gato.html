@@ -41,6 +41,7 @@
             //menos lineas de codigo al hacer click sobreescribe inmediatamente la imagen
             $('img').click(function() {
                 var temporal = $(this).attr('src');
+                console.log(temporal);
                 $(this).attr('src', $(this).attr('data-alt-src'));
                 $(this).attr('data-alt-src', temporal);
             });
