@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex!</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //carga dinamica de las imagenes
+            for (let i = 1; i <= 151; i++) {
+                $('#container').append('<img id="' + i + '" src="http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + i + '.png">')
+            };
+
+
+            //capturar el click en alguna imagen
+            $('img').click(function() {
+                var id = $(this).attr('id'); //obtenemos el valor del id y lo almacenamos en una variable
+                mostrarPokedex(id);
+            });
+
+            $('#cerrarmodal').click(function() {
+                $('#miModal').removeClass('mimodaltarget');
+            });
+
+            //variable para obtener el id del pokemon fuera de la funcion y sobreescribirla para cambiar la posicion
+            var pokeid = 0;
+
+            function mostrarPokedex(id) {
+                $.get("https://pokeapi.co/api/v2/pokemon/" + id + "/", function(respuesta) {
+
+                    //console.dir(respuesta);
+
+                    $('#miModal').addClass('mimodaltarget');
+                    $('#name').html('<h3>' + respuesta.name + '</h3>'); //console.log(respuesta.name);
+                    $('#foto').html('<img src=' + respuesta.sprites.front_default + '>') //console.log(respuesta.sprites.front_default);
+                    $('#tipo').html('<h3> ' + respuesta.types[0].type.name + '</h3>') //console.log(respuesta.types[0].type.name);
+                    $('#altura').html('<h3>' + respuesta.height + '</h3>') //console.log(respuesta.height);
+                    $('#peso').html('<h3>' + respuesta.weight + '</h3>') //console.log(respuesta.weight);
+                }, "json");
+                pokeid = id;
+            }
+
+            //boton pokemon anterior
+            $('#prev').click(function() {
+                pokeid -= 1;
+                mostrarPokedex(pokeid);
+            });
+            //boton pokemon siguiente
+            $('#next').click(function() {
+                pokeid += 1;
+                mostrarPokedex(pokeid);
+            });
+
+
+
+            //fin Jquery
+        });
+    </script>
+    <style>
+        #descripcion {
+            width: 250px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            border: red solid;
+            border-radius: 5%;
+            background-color: white;
+        }
+        
+        .titulo {
+            color: red;
+        }
+        
+        .modal-contenido {
+            width: 300px;
+            padding: 10px 20px;
+            margin: 10% auto;
+            position: relative;
+            border-radius: 5%;
+            text-align: center;
+        }
+        
+        .modal {
+            background-color: rgba(0, 0, 0, .8);
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            opacity: 0;
+            pointer-events: none;
+            transition: all 1s;
+        }
+        /*#miModal:target {
+            opacity: 1;
+            pointer-events: auto;
+        }*/
+        
+        .mimodaltarget {
+            opacity: 1;
+            pointer-events: auto;
+            vertical-align: top;
+        }
+        
+        #prev,
+        #next {
+            display: inline-block;
+            margin: 0px 10%;
+        }
+        
+        #cerrarmodal {
+            color: red;
+            margin-right: 15%;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="container">
+        <div id="miModal" class="modal">
+            <div class="modal-contenido">
+                <button id="cerrarmodal">X</button>
+                <button id="prev"> ← </button>
+                <button id="next"> → </button>
+                <div id="descripcion">
+
+                    <p id="name"></p>
+
+                    <p id="foto"></p>
+                    <h3 class="titulo">Tipo</h3>
+
+                    <p id="tipo"></p>
+
+
+                    <h3 class="titulo">Altura</h3>
+                    <p id="altura"></p>
+
+                    <h3 class="titulo">Peso</h3>
+                    <p id="peso"></p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
