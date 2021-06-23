@@ -18,6 +18,7 @@
             //capturar el click en alguna imagen
             $('img').click(function() {
                 var id = $(this).attr('id'); //obtenemos el valor del id y lo almacenamos en una variable
+                console.log(id);
                 mostrarPokedex(id);
             });
 
@@ -46,11 +47,13 @@
             //boton pokemon anterior
             $('#prev').click(function() {
                 pokeid -= 1;
+                console.log(pokeid);
                 mostrarPokedex(pokeid);
             });
             //boton pokemon siguiente
             $('#next').click(function() {
                 pokeid += 1;
+                console.log(pokeid);
                 mostrarPokedex(pokeid);
             });
 

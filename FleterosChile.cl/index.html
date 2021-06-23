@@ -10,11 +10,27 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('button').click(function() {
+            /*$('button').click(function() {
                 alert('Buscando Fleteros, porfavor espere...')
                 alert('Uniendo características de envío...')
                 alert('Fletero encontrado!')
-            })
+            })*/
+
+            $('form').submit(function() {
+                var ciudad = document.getElementById("ciudad").value
+                var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + ciudad + '&&appid=4d1ce17ab0625630cf7b7deccb8aecc4'
+                    // your code here (build up your url)
+                $.get(url, function(res) {
+                    // your code here
+                    console.log(res);
+                    var celsius = (res.main.temp - 273.15).toFixed(2);
+                    $('#tituloclima').html('<h2>El clima en tu ciudad de envío: </h2>');
+                    $('#city').html('<h5>' + ciudad + ': ' + res.weather[0].main + '</h5>');
+                    $('#temp').html('<h5>Temperatura: ' + celsius + ' C°</h5>');
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+            });
 
 
 
@@ -22,6 +38,13 @@
             //fin Jquery
         });
     </script>
+    <style>
+        #city,
+        #temp {
+            display: inline-block;
+            margin: 0px 15%;
+        }
+    </style>
 </head>
 
 <body>
@@ -75,7 +98,7 @@
                 <option value="15">XV Región de Arica y Parinacota</option>
                 <option value="16">XVI Región de Ñuble</option>
             </select>
-                <input class="form-control form-control-sm" type="text" placeholder="Ingresa tu ciudad" aria-label=".form-control-sm example">
+                <input id="ciudad" class="form-control form-control-sm" type="text" placeholder="Ingresa tu ciudad" aria-label=".form-control-sm example">
                 <br>
                 <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
                 <option selected>Tipo de envío</option>
@@ -93,9 +116,14 @@
                 <label for="exampleFormControlTextarea1" class="form-label">Información adicional</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                 <br>
-                <button type="button" class="btn btn-primary">Buscar Fletero...</button>
+                <button type="submit" class="btn btn-primary">Buscar Fletero...</button>
             </form>
         </div>
+    </div>
+    <div id="clima" class="container-fluid p-4 text-right">
+        <h2 id="tituloclima"></h2>
+        <p id="city"></p>
+        <p id="temp"></p>
     </div>
 </body>
 
