@@ -1,0 +1,285 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    /*outline: dotted 1px red;*/
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+/*Contenedores*/
+
+#contenedor {
+    width: 980px;
+    height: 690px;
+}
+
+#topbar {
+    width: 980px;
+    height: 90px;
+    background-image: linear-gradient(#f1efec, #d9d6cf);
+    text-align: right;
+}
+
+#searchbar {
+    width: 800px;
+    height: 30px;
+    display: inline-block;
+}
+
+#topmenu {
+    margin-top: 14px;
+    margin-right: 15px;
+    list-style-type: none;
+}
+
+#middlecontent {
+    width: 980px;
+    height: 395px;
+    background-image: linear-gradient(#3674bb, #1f446d, #1f446d, #1f446d);
+    border-top: 1px solid white;
+}
+
+#accnew {
+    width: 290px;
+    height: 340px;
+    display: inline-block;
+}
+
+#manageacc {
+    background-color: #d4dbe3;
+    padding: 1px;
+    width: 250px;
+    height: 260px;
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+}
+
+#tituloacc {
+    background-image: linear-gradient(#113a68, #2869b4);
+    width: 240px;
+    height: 40px;
+    text-align: center;
+    padding: 5px;
+}
+
+#login {
+    width: 210px;
+    height: 180px;
+    margin: 20px;
+}
+
+#update {
+    background-color: #d4dbe3;
+    padding: 10px;
+    margin-top: 15px;
+}
+
+#cajasmedio {
+    width: 930px;
+    height: 135px;
+    background-color: #1f446d;
+    padding: 15px 25px;
+}
+
+.caja {
+    width: 260px;
+    height: 105px;
+    background-color: white;
+    border: solid 5px #d9d5ce;
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+}
+
+#central {
+    margin: 0px 24px;
+}
+
+.textocaja {
+    width: 135px;
+    height: 105px;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#footer {
+    width: 970px;
+    height: 35px;
+    background-image: linear-gradient(#e5e2dc, #d0cac2, #d0cac2);
+    padding: 5px;
+}
+
+#botmenu {
+    width: 670px;
+    padding: 8px;
+    margin-left: 20px;
+    display: inline-block;
+    border-right: solid 1px #b6bdbc;
+}
+
+
+/*Imagenes*/
+
+#logo {
+    margin-left: 10px;
+    vertical-align: bottom;
+}
+
+#lupa {
+    margin-right: 40px;
+    width: 30px;
+    vertical-align: bottom;
+}
+
+#mainpic {
+    vertical-align: top;
+    display: inline-block;
+    width: 535px;
+}
+
+.cajaimagen {
+    display: inline-block;
+    width: 106px;
+    vertical-align: top;
+}
+
+
+/*Botones*/
+
+#corporate {
+    background-image: linear-gradient(#286ab4, #143f70);
+    color: white;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 2px 20px 4px 5px;
+    border-radius: 5px 0px 0px 5px;
+    margin-right: 35px;
+}
+
+#signin {
+    color: white;
+    background-image: linear-gradient(#4f4f4f, #363636, #888888);
+    border-radius: 5px;
+    width: 80px;
+    height: 27px;
+    font-size: 13px;
+    margin: 10px 10px 10px 0px;
+}
+
+#newcustomer {
+    display: inline-block;
+    border: 1px solid white;
+    background-image: linear-gradient(#123b6a, #2767b0);
+    width: 250px;
+    height: 30px;
+    margin-left: 20px;
+    vertical-align: top;
+    text-align: center;
+    padding-top: 5px;
+}
+
+
+/*inputs*/
+
+.bar {
+    border-radius: 5px;
+    height: 20px;
+    width: 200px;
+    margin-right: 5px;
+}
+
+.acc {
+    margin: 5px 0px;
+}
+
+
+/*Menus*/
+
+.tmenu {
+    display: inline-block;
+    padding: 0px 10px 7px 10px;
+    border-right: inset 1px white;
+    color: #433c33;
+    font-size: 12px;
+}
+
+.bmenu {
+    display: inline-block;
+    padding: 0px 5px 0px 5px;
+    border-right: inset 1px #b6bdbc;
+    color: #433c33;
+    font-size: 12px;
+}
+
+.sinl {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    display: inline-block;
+}
+
+
+/*Texto*/
+
+.tituloh1 {
+    color: white;
+    font-size: 19px;
+}
+
+h3 {
+    color: white;
+    font-size: 10px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #4d3333;
+}
+
+.forgot {
+    color: #348bf3;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 5px 0px;
+}
+
+#register,
+.linkcaja {
+    color: #348bf3;
+}
+
+#news {
+    font-weight: bold;
+    margin-left: 8px;
+}
+
+.cajatitulo {
+    font-weight: bold;
+    font-size: 10px;
+    display: inline-block;
+}
+
+.linkcaja {
+    font-size: 12px;
+}
+
+span {
+    font-weight: bold;
+}
+
+#verde {
+    color: #4e993c;
+}
+
+#fecha {
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 10px;
+}

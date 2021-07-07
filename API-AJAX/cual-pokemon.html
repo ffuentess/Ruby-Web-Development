@@ -41,18 +41,26 @@
                     $('#altura').html('<h3>' + respuesta.height + '</h3>') //console.log(respuesta.height);
                     $('#peso').html('<h3>' + respuesta.weight + '</h3>') //console.log(respuesta.weight);
                 }, "json");
-                pokeid = id;
+                pokeid = parseInt(id);
             }
 
             //boton pokemon anterior
             $('#prev').click(function() {
-                pokeid -= 1;
+                if (pokeid == 1) {
+                    pokeid = 898;
+                } else {
+                    pokeid -= 1;
+                }
                 console.log(pokeid);
                 mostrarPokedex(pokeid);
             });
             //boton pokemon siguiente
             $('#next').click(function() {
-                pokeid += 1;
+                if (pokeid == 898) {
+                    pokeid = 1;
+                } else {
+                    pokeid += 1;
+                }
                 console.log(pokeid);
                 mostrarPokedex(pokeid);
             });
