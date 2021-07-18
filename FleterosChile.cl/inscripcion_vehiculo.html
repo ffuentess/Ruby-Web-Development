@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscribe tu Vehículo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index2.html">Fleteros Chile</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="login.html">Ingresar</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="inscripcion_usuario.html">Inscribir</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Nosotros</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="row-2 p-2 text-center">
+            <h2 class="my-4">Bienvenido a la Red de Fleteros mas Grande de Chile</h2>
+            <p>A continuación ingresa los datos requeridos para formar parte de esta comunidad.</p>
+            <form class="row m-1 text-center" action="inscribir-vehiculo">
+                <div class="col p-4 text-start">
+                    <h4>Requisitos de Inscripción</h4>
+                    <select class="form-select" aria-label="tipo de Vehículo">
+                            <option selected>Seleccione el tipo de vehículo a Inscribir</option>
+                            <option value="1">Bicicleta</option>
+                            <option value="2">Moto</option>
+                            <option value="3">Auto</option>
+                            <option value="4">Camioneta</option>
+                            <option value="5">Furgón</option>
+                            <option value="6">Camión</option>
+                        </select>
+                </div>
+                <div class="col p-4 text-start">
+                    <h4>Documentación requerida</h4>
+                    <p>Para inscribirte en nuestra plataforma sólo necesitas tener 21 años y contar con los siguientes documentos: </p>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label fw-bold">Licencia de Conducir chilena: </label>
+                        <input class="form-control bg-primary" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label fw-bold">Certificado de antecedentes actualizado: </label>
+                        <input class="form-control bg-primary" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label fw-bold">Permiso de Circulación al día: </label>
+                        <input class="form-control bg-primary" type="file" id="formFile">
+                    </div>
+                    <div class="mb-3">
+                        <label for="formFile" class="form-label fw-bold">Cédula de Identidad / Pasaporte: </label>
+                        <input class="form-control bg-primary" type="file" id="formFile">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button class="btn btn-primary" type="submit">Enviar documentos</button>
+                </div>
+            </form>
+            <p class="fw-bold">*** Una vez verificados los documentos recibirás una notificación y un código de verificación para comenzar a trabajar con nosotros ***</p>
+        </div>
+    </body>
+
+</html>

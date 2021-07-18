@@ -89,9 +89,10 @@ where film.rental_rate = 2.99;
 -- las características especiales, el género (categoría) y el nombre y apellido del actor.
 
 select film.title as Título, film.description as Description, film.release_year as Año, film.rating as Calificación,
-film.special_features as 'Características Especiales', category.name as Género, actor.actor_id, actor.first_name as Nombre, actor.last_name as Apellido from actor
+film.special_features as 'Características Especiales', category.name as Género, actor.actor_id, actor.first_name as Nombre, 
+actor.last_name as Apellido from actor
 JOIN film_actor ON film_actor.actor_id = actor.actor_id
 JOIN film ON film.film_id = film_actor.film_id
 JOIN film_category ON film_category.film_id = film.film_id
 JOIN category ON category.category_id = film_category.category_id
-where actor.first_name = 'SANDRA' and actor.last_name = 'KILMER';
+where actor.first_name = 'SANDRA' and actor.last_name = 'KILMER' and category.name = 'Action';

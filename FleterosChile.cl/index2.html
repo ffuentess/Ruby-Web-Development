@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleteros de todo Chile!</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script>
+        $(document).ready(function() {
+
+            $('form').submit(function() {
+                var ciudad = ($('#ciudad').val()).toUpperCase();
+                var url = 'http://api.openweathermap.org/data/2.5/weather?q=' + ciudad + '&&appid=4d1ce17ab0625630cf7b7deccb8aecc4'
+                    // your code here (build up your url)
+                $.get(url, function(res) {
+                    // your code here
+                    console.log(res);
+                    lati = res.coord.lat;
+                    long = res.coord.lon;
+                    console.log(lati, long);
+                    var celsius = (res.main.temp - 273.15).toFixed(2);
+                    $('#tituloclima').html('<h2>El clima en tu ciudad de envío: </h2>');
+                    $('#city').html('<h5>' + ciudad + ': ' + res.weather[0].main + '</h5>');
+                    $('#temp').html('<h5>Temperatura: ' + celsius + ' C°</h5>');
+                }, 'json');
+                // don't forget to return false so the page doesn't refresh
+                return false;
+            });
+
+            //fin Jquery
+        });
+    </script>
+    <style>
+        #city,
+        #temp {
+            display: inline-block;
+            margin: 0px 15%;
+        }
+        
+        #map {
+            width: 100%;
+            height: 75%;
+        }
+        
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index2.html">Fleteros Chile</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Ingresar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="inscripcion_usuario.html">Inscribir</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Nosotros</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid p-4 text-center">
+        <p>
+            <h1>¿Quieres realizar un envío dentro de tu ciudad?...</h1>
+            <h4>Ingresa tus datos a continuación y consigue un flete en menos de 15 minutos!!!</h4>
+        </p>
+        <div class="container-fluid px-5 text-center">
+            <form action="buscar-flete">
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
+                <option selected>Región...</option>
+                <option value="1">I Región de Tarapacá</option>
+                <option value="2">II Región de Antofagasta</option>
+                <option value="3">III Región de Atacama</option>
+                <option value="4">IV Región de Coquimbo</option>
+                <option value="5">V Región de Valparaíso</option>
+                <option value="6">VI Región del Libertador General Bernardo O'Higgins</option>
+                <option value="7">VII Región del Maule</option>
+                <option value="8">VIII Región del Bio-Bío</option>
+                <option value="9">IX Región de la Araucanía</option>
+                <option value="10">X Región de Los Lagos</option>
+                <option value="11">XI Región de Aysén del General Carlos Ibañez del Campo</option>
+                <option value="12">XII Región de Magallanes y Antártica Chilena</option>
+                <option value="13">Región Metropolitana de Santiago</option>
+                <option value="14">XIV Región de Los Ríos</option>
+                <option value="15">XV Región de Arica y Parinacota</option>
+                <option value="16">XVI Región de Ñuble</option>
+            </select>
+                <input id="ciudad" class="form-control form-control-sm" type="text" placeholder="Ingresa tu ciudad" aria-label=".form-control-sm example">
+                <br>
+                <select class="form-select form-select-sm mb-3" aria-label=".form-select-lg example">
+                <option selected>Tipo de envío</option>
+                <option value="1">Express (Menos de 2kg)</option>
+                <option value="2">Liviano (Entre 3kg - 5kg)</option>
+                <option value="3">Medio (Entre 6kg - 15kg)</option>
+                <option value="4">Grande (Entre 16kg - 30kg)</option>
+                <option value="5">XL (Entre 31kg - 60kg)</option>
+                <option value="6">XXL (61kg y más)</option>
+            </select>
+                <input class="form-control form-control-sm" type="text" placeholder="Ingresa dirección de retiro" aria-label=".form-control-sm example">
+                <br>
+                <input class="form-control form-control-sm" type="text" placeholder="Ingresa dirección de envío" aria-label=".form-control-sm example">
+                <br>
+                <label for="exampleFormControlTextarea1" class="form-label">Información adicional</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <br>
+                <button type="submit" class="btn btn-primary">Buscar Fletero...</button>
+            </form>
+        </div>
+    </div>
+    <div id="clima" class="container-fluid p-4 text-right">
+        <h2 id="tituloclima"></h2>
+        <p id="city"></p>
+        <p id="temp"></p>
+    </div>
+
+</body>
+
+</html>
